@@ -38,4 +38,22 @@ public class Sort_Ksorted_array {
 
         return sortedArr;
     }
+
+    // now change in original array
+    public static void sortKSortedArrayInPlace(int[] arr, int k) {
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        int n = arr.length;
+        int index = 0;
+
+        for (int i = 0; i <= k && i < n; i++) {
+            minHeap.offer(arr[i]);
+        }
+        for (int i = k + 1; i < n; i++) {
+            arr[index++] = minHeap.poll();
+            minHeap.offer(arr[i]);
+        }
+        while (!minHeap.isEmpty()) {
+            arr[index++] = minHeap.poll();
+        }
+    }
 }
