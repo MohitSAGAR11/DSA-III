@@ -17,7 +17,7 @@ public class Sort_Ksorted_array {
     // we been given a k sorted array we have to sort it completely
     // k - sorted : an array is said to be k sorted if every element is at most k
     // distance away from its target position in the sorted array
-    // tc = O(n log k)
+    // tc = O(n log k) sc = O(k)
 
     public static int[] sortKSortedArray(int[] arr, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
